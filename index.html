@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Artwork</title>
+	<!--
+    Artwork by Nina Royle
+    HTML programmed by Oliver Scott
+    -->
+	<style>
+	html {
+		scroll-behavior: smooth;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	body {
+		background-color: #d55937
+	}
+	
+	.noborder {
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.modalDialog {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 99999;
+		opacity: 0;
+		-webkit-transition: opacity 100ms ease-in;
+		-moz-transition: opacity 100ms ease-in;
+		transition: opacity 100ms ease-in;
+		pointer-events: none;
+	}
+	
+	.modalDialog:target {
+		opacity: 1;
+		pointer-events: auto;
+	}
+	
+	.modalDialog > div {
+		max-width: 800px;
+		width: 440px;
+		height: 300px;
+		position: relative;
+		margin: 10% auto;
+		padding: 20px;
+		border-radius: 3px;
+	}
+	
+	.modalDialog a {
+		display: block;
+		text-align: center;
+		width: 400px;
+	}
+	
+	.modalDialog li {
+		display: block;
+		text-align-last: center;
+	}
+	
+	.modalDialog ul {
+		margin-top: 40px;
+		padding: 40px;
+		background: #fd8f6c;
+	}
+	
+	.btn {
+		border: 5px solid #2c3e50;
+		color: #2c3e50;
+		display: block;
+		font-size: 2rem;
+		letter-spacing: 0.1rem;
+		padding: 1rem;
+		position: relative;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	
+	.btn::before {
+		content: "";
+		background-color: #fd8f6c;
+		box-shadow: 10px 10px 0 #E26A6A, 20px 20px 0 #d55937;
+		position: absolute;
+		left: 0.25rem;
+		top: 0.5rem;
+		height: 102%;
+		width: 102%;
+		z-index: -1;
+		transition: all 0.4s ease;
+	}
+	
+	.btn:hover::before {
+		box-shadow: none;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	</style>
+</head>
+
+<body class="noborder">
+	<!-- Print fd8f6c -->
+	<div class="noborder" style="width: 3000px;"> <img src="https://freight.cargo.site/t/original/i/5f90a4e4207ed76de311b9398c539359309b956445d744bacd4b61f2468519f3/NRweb.jpg" style="float: left; width: 3000px; height: 4854px; margin: 0 0px;" alt="image name"> </div>
+	<!-- Sound -->
+	<audio autoplay id="player">
+		<source src="https://files.cargocollective.com/c227564/NRweb.ogg" type="audio/ogg">
+		<source src="https://files.cargocollective.com/c227564/NRweb.mp3" type="audio/mpeg"> </audio> <a id="aha" href="#openModal-about" style="display:none;">go</a>
+	<!--modals-->
+	<div id="openModal-about" class="modalDialog">
+		<div> <span class="wrapper"><a onclick="document.getElementById('player').play();window.scrollTo(600, 2400);" href="#close" title="Close" class="launch btn">Launch Artwork</a></span>
+			<ul>
+				<li>Thank you to: </li>
+				<li>Fieldnotes (commission)</li>
+				<li>Eleanor Mumford (voice 2)</li>
+				<li>May Robson (sound)</li>
+				<li>Oliver Scott (programming)</li>
+				<li>Maria Christoforidou (text edit)</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+	window.onload = function() {
+		location.href = document.getElementById("aha");
+	}
+	</script>
+</body>
+
+</html>
